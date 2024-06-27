@@ -3,7 +3,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 declare namespace App {
-    interface locals {
+    interface Locals {
         supabaseSsr: SupabaseClient
     }
 }

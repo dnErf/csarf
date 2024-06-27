@@ -1,7 +1,6 @@
-import { defineMiddleware } from "astro:middleware"
 import { createServerClient, parseCookieHeader } from "@supabase/ssr"
 
-export const supabase = defineMiddleware(async (context, next) => {
+export const supabase = async (context, next) => {
 
 	context.locals.supabaseSsr = createServerClient(
 		import.meta.env.PUBLIC_SUPABASE_URL,
@@ -20,4 +19,4 @@ export const supabase = defineMiddleware(async (context, next) => {
 	)
 	
 	return next()
-})
+}
