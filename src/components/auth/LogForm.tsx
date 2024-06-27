@@ -1,6 +1,7 @@
 import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { supabaseWeb } from "@/lib/supabase/webClient"
 
 const authSchema = z.object({
     email: z.string().email(),
@@ -18,17 +19,33 @@ export default () => {
 
     async function submitForm(data) {
         console.log('= submitForm')
-        let result = await fetch('/~api/auth/login', { 
+
+        let supabaseAuth = await supabaseWeb.auth.signInWithPassword({ 
+            email: data.email,
+            password: data.password
+        })
+
+        if (supabaseAuth.error) {
+            console.log(JSON.stringify(supabaseAuth.error))
+            return
+        }
+
+        let isFine = await fetch('/~api/auth/login', { 
             method: 'POST', 
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ ...data }) 
+            body: JSON.stringify({ ...supabaseAuth.data.session }) 
         })
-        .then((response) => response.json())
+        .then((response) => response.ok)
         .catch((err) => console.error(err))
-        console.log(result)
-        console.log('=')
+
+        console.log('= submit form')
+
+        if (isFine) {
+            window.history.pushState({ login: true }, '', '/')
+            window.location.assign('/')
+        }
     }
 
     return (

@@ -3,12 +3,17 @@
 //     return new Response(JSON.stringify({ isFine: true }), { status: 200 })
 // }
 
-export async function POST({ request }) {
+export async function POST({ cookies, locals, request }) {
     let body = await request.json()
-    console.log('= ~api login')
-    console.log(body.email)
-    console.log(body.password)
-    console.log('===')
+    
+    if (body.access_token === undefined || body.access_token === null || body.access_token === '') {
+        return new Response(JSON.stringify({ isFine: false }), { status: 200 })
+    }
+
+    cookies.set('sb-access-token', body.access_token, { path: "/"})
+    cookies.set('sb-refresh-token', body.refresh_token, { path: "/"})
+    cookies.set('sb-user-id', body.user.id, { path: "/"})
+
     return new Response(JSON.stringify({ isFine: true }), { status: 200 })
 }
 
