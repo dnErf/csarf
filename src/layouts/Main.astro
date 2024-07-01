@@ -1,6 +1,7 @@
 ---
 import Base from "./Base.astro"
 import Sidebar from "@/components/Sidebar"
+import Navbar from "@/components/Navbar"
 ---
 
 <Base>
@@ -13,7 +14,12 @@ import Sidebar from "@/components/Sidebar"
 			<!-- side bar close ml-8 -->
 			<!-- side bar open ml-8 -->
 			<!-- for content ?? h-screen min-h-full w-full -->
-			<slot />
+			 <div>
+				<Navbar />
+			 </div>
+			<div>
+				<slot />
+			</div>
 		</section>
 	</main>
 </Base>
