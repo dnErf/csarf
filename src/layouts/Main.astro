@@ -2,6 +2,7 @@
 import Base from "./Base.astro"
 import Sidebar from "@/components/Sidebar"
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer.astro"
 ---
 
 <Base>
@@ -20,6 +21,9 @@ import Navbar from "@/components/Navbar"
 			<div>
 				<slot />
 			</div>
+		</section>
+		<section class="mx-4 my-4 sm:ml-72">
+			<Footer />
 		</section>
 	</main>
 </Base>
