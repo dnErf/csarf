@@ -1,10 +1,10 @@
 ---
-import Main from "@/layouts/Main.astro"
+import Base from "@/layouts/Base.astro"
 import LogForm from "@/components/auth/LogForm"
 ---
 
-<Main>
+<Base>
     <div class="flex justify-center items-center h-screen">
         <LogForm client:only="react" />
     </div>
-</Main>
+</Base>
