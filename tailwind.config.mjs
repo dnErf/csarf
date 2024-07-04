@@ -6,5 +6,5 @@ export default {
 	theme: {
 		extend: {},
 	},
-	plugins: [require('flowbite/plugin'), addDynamicIconSelectors()],
+	plugins: [require('flowbite/plugin')({ charts: true }), addDynamicIconSelectors()],
 }
