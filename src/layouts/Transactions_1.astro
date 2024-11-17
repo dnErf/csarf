@@ -1,0 +1,23 @@
+---
+import Base from "./Base.astro"
+import Footer from "@/components/transactions_1/Footer.astro"
+import Sidebar from "@/components/transactions_1/Sidebar"
+import Navbar from "@/components/transactions_1/Navbar"
+---
+
+<Base>
+    <section>
+        <Sidebar />
+    </section>
+    <section>
+        <div>
+            <Navbar />
+        </div>
+        <div>
+            <slot />
+        </div>
+    </section>
+    <section class="mx-4 my-4 sm:ml-72">
+        <Footer />
+    </section>
+</Base>
