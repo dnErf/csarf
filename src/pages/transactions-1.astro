@@ -1,0 +1,26 @@
+---
+import Transactions_1 from "@/layouts/Transactions_1.astro"
+import OverviewCard from "@/components/transactions_1/OverviewCard"
+import OverviewChart from "@/components/transactions_1/OverviewChart"
+import TransactionsTable from "@/components/transactions_1/TransactionsTable"
+import RightCard from "@/components/transactions_1/RightCard.astro"
+---
+
+<Transactions_1>
+    <div class="flex gap-4 w-full">
+		<div class="w-full border">
+			<div>
+				<OverviewCard client:only="react" />
+			</div>
+			<div class="p-4">
+				<TransactionsTable />
+			</div>
+			<div class="p-4 w-full">
+				<OverviewChart client:only="react" />
+			</div>
+		</div>
+		<div class="w-96">
+			<RightCard />
+		</div>
+	</div>
+</Transactions_1>

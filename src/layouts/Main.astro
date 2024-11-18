@@ -1,29 +1,9 @@
 ---
 import Base from "./Base.astro"
-import Sidebar from "@/components/Sidebar"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer.astro"
 ---
 
 <Base>
 	<main class="">
-		<section>
-			<!-- nav -->
-			 <Sidebar />
-		</section>
-		<section class="ml-4 sm:ml-72">
-			<!-- side bar close ml-8 -->
-			<!-- side bar open ml-8 -->
-			<!-- for content ?? h-screen min-h-full w-full -->
-			 <div>
-				<Navbar />
-			 </div>
-			<div>
-				<slot />
-			</div>
-		</section>
-		<section class="mx-4 my-4 sm:ml-72">
-			<Footer />
-		</section>
+		<slot />
 	</main>
 </Base>
