@@ -1,6 +1,6 @@
 import { useState } from "react"
-import CloseSvg from "@/assets/close.svg"
-import MenuSvg from "@/assets/menu.svg"
+import CloseSvg from "@/assets/tree_1/close.svg"
+import MenuSvg from "@/assets/tree_1/menu.svg"
 
 export default Navbar
 

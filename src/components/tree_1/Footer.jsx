@@ -1,5 +1,5 @@
-import GithubSvg from "@/assets/github.svg"
-import InstagramSvg from "@/assets/instagram.svg"
+import GithubSvg from "@/assets/tree_1/github.svg"
+import InstagramSvg from "@/assets/tree_1/instagram.svg"
 
 export default Footer
 function Footer() {
