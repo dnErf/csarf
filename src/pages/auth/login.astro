@@ -1,11 +1,13 @@
 ---
 import Base from "@/layouts/Base.astro"
-import LogForm from "@/components/auth/LogForm"
+// import LogForm from "@/components/auth/LogForm"
 ---
 
 <Base>
     <div class="flex justify-center items-center h-screen">
-        <LogForm client:only="react" />
+        <!-- TODO something is wrong building the form -->
+        <!-- ? might be in supabase webClient -->
+        <!-- <LogForm client:only="react" /> -->
     </div>
     <!-- toast at bottom right -->
     <div class="">

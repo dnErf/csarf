@@ -2,11 +2,14 @@
 import "../styles.css"
 
 interface Props {
+	className?: string;
 	metaPageDescription?: string;
 	metaPageTitle?: string;
 }
 
-let { metaPageTitle, metaPageDescription } = Astro.props
+let { className, metaPageTitle, metaPageDescription } = Astro.props
+
+console.log(className)
 ---
 
 <script>
@@ -28,6 +31,8 @@ window.onload = function() {
 		<title>{metaPageTitle}</title>
 	</head>
 	<body>		
-		<slot />
+		<main class={className}>
+			<slot />
+		</main>
 	</body>
 </html>
