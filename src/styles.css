@@ -3,5 +3,41 @@
 @tailwind utilities;
 
 @layer components {
-    
+    .btn {
+        @apply flex items-center justify-center rounded-md bg-black transition-all cursor-pointer active:scale-95
+    }
+
+    .copy-container {
+        @apply flex justify-center items-center cursor-pointer;
+    }
+
+    .c-space {
+        @apply px-4 sm:px-8;
+    }
+
+    .grid-container {
+        @apply flex flex-col w-full h-full border border-black bg-black rounded-lg;
+    }
+}
+
+@layer utilities {
+    .btn-ping {
+        @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75;
+    }
+
+    .btn-ping-dot {
+        @apply relative inline-flex rounded-full h-3 w-3 bg-green-500
+    }
+
+    .grid-headtext {
+        @apply text-xl font-semibold;
+    }
+
+    .grid-subtext {
+        @apply text-[#afb0b6] text-base;
+    }
+
+    .text-gray_gradient {
+        @apply bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D58EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
+    }
 }
