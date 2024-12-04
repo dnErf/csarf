@@ -2,11 +2,13 @@
 import Tree_1 from "@/layouts/Tree_1.astro";
 import Navbar from "@/components/tree_1/Navbar.jsx";
 import Footer from "@/components/tree_1/Footer.jsx";
+import Experience from "@/components/tree_1/sections/Experience";
 import About from "@/components/tree_1/sections/About";
 ---
 
 <Tree_1>
     <Navbar client:only="react" />
     <About client:only="react" />
+    <Experience client:only="react" />
     <Footer client:only="react" />
 </Tree_1>
